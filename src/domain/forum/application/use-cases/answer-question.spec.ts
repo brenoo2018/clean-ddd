@@ -10,7 +10,7 @@ describe('Create Answer', () => {
     sut = new AnswerQuestionUseCase(inMemoryAnswerssRepository);
   });
 
-  test('create an answer', async () => {
+  it('should be able create an answer', async () => {
     const { answer } = await sut.execute({
       content: 'nova resposta',
       questionId: '1',
