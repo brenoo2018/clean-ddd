@@ -1,13 +1,13 @@
-import { InMemoryAnswerssRepository } from 'test/repositories/in-memory-answers-repository';
+import { InMemoryAnswersRepository } from 'test/repositories/in-memory-answers-repository';
 import { AnswerQuestionUseCase } from './answer-question';
 
-let inMemoryAnswerssRepository: InMemoryAnswerssRepository;
+let inMemoryAnswersRepository: InMemoryAnswersRepository;
 let sut: AnswerQuestionUseCase;
 
 describe('Create Answer', () => {
   beforeEach(() => {
-    inMemoryAnswerssRepository = new InMemoryAnswerssRepository();
-    sut = new AnswerQuestionUseCase(inMemoryAnswerssRepository);
+    inMemoryAnswersRepository = new InMemoryAnswersRepository();
+    sut = new AnswerQuestionUseCase(inMemoryAnswersRepository);
   });
 
   it('should be able create an answer', async () => {
@@ -18,6 +18,6 @@ describe('Create Answer', () => {
     });
 
     expect(answer.content).toEqual('nova resposta');
-    expect(inMemoryAnswerssRepository.items[0].id).toEqual(answer.id);
+    expect(inMemoryAnswersRepository.items[0].id).toEqual(answer.id);
   });
 });

@@ -2,7 +2,7 @@ import { Entity } from '@/core/entities/entity';
 import { UniqueEntityID } from '@/core/entities/unique-entity-id';
 import { Optional } from '@/core/types/optional';
 
-interface AnswerProps {
+export interface AnswerProps {
   authorId: UniqueEntityID;
   questionId: UniqueEntityID;
   content: string;
@@ -32,7 +32,7 @@ export class Answer extends Entity<AnswerProps> {
   }
 
   get excerpt() {
-    return this.props.content.substring(0, 120).trimEnd().concat('...');
+    return this.content.substring(0, 120).trimEnd().concat('...');
   }
 
   private touch() {
